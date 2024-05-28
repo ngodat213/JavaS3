@@ -7,9 +7,31 @@
     <title th:text="${titlehehe}"></title>
 </head>
 <body>
-<div th:fragment="Chao">
-    <p>Em chao anh Tung</p>
+<header th:fragment="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">My Website</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/students">Index Student</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/classrooms">Index Classroom</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <div th:fragment="content">
+    </div>
 </div>
 
+<footer th:fragment="footer">
+    <div class="footer bg-light text-center py-3">
+        <p>&copy; 2024 My Website. All Rights Reserved.</p>
+    </div>
+</footer>
 </body>
 </html>

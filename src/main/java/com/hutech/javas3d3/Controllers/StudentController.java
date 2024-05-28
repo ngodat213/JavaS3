@@ -34,6 +34,7 @@ public class StudentController {
         model.addAttribute("classes", classrooms);
         return "Student/add";
     }
+
     @PostMapping("/save")
     public String saveStudent(StudentCreate studentCreate){
         studentServices.createStudent(studentCreate);
@@ -45,6 +46,14 @@ public class StudentController {
        model.addAttribute("student", student);
        return "Student/edit";
     }
+
+    @GetMapping("/view/{id}")
+    public String viewStudent(@PathVariable String id, Model model){
+        Student student = studentServices.getStudentById(id);
+        model.addAttribute("student", student);
+        return "Student/view";
+    }
+
     @PostMapping("/saveedit")
     public String saveStudentEdit(StudentEdit studentEdit){
         studentServices.UpdateStudent(studentEdit);

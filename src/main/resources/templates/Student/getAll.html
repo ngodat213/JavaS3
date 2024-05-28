@@ -5,11 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<div id="chao" th:replace="Fragments/lib.html::Chao">
-    <div th:fragment="Chao">
-        <p>Em chao anh Tung</p>
-    </div>
-</div>
+<header th:replace="Fragments/lib.html:: header"></header>
 <table class="table">
     <thead class="thead-light">
     <td>
@@ -31,6 +27,9 @@
         Birth
     </td>
     <td>
+        Classroom
+    </td>
+    <td>
         Action
     </td>
     </thead>
@@ -43,11 +42,12 @@
         <td th:text="${student.dateOfBirth}"></td>
         <td th:text="${student.classroom.name}"></td>
         <td>
-            <a th:href="'/students/edit/'+${student.id}">Edit</a>
+            <a th:href="'/students/view/'+${student.id}">View</a>
             <a th:href="'/students/delete/'+${student.id}">Delete</a>
         </td>
     </tr>
 </table>
 <button onclick="location.href='/students/new'">Create</button>
+<footer th:replace="Fragments/lib.html :: footer"></footer>
 </body>
 </html>

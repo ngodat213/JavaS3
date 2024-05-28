@@ -1,14 +1,14 @@
 package com.hutech.javas3d3.Controllers;
 
 import com.hutech.javas3d3.Entities.Classroom;
+import com.hutech.javas3d3.Entities.Student;
+import com.hutech.javas3d3.RequestEntities.StudentCreate;
+import com.hutech.javas3d3.RequestEntities.StudentEdit;
 import com.hutech.javas3d3.Services.ClassroomServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,9 +29,36 @@ public class ClassroomController {
         model.addAttribute("classroom", new Classroom());
         return "Classroom/add";
     }
+
     @PostMapping("/save")
     public String saveClassroom(Classroom classroom) {
         classroomServices.addClassroom(classroom);
+        return "redirect:/classrooms";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editClassroom(@PathVariable String id, Model model){
+        Classroom classroom = classroomServices.getClassroomById(id);
+        model.addAttribute("classroom", classroom);
+        return "Classroom/edit";
+    }
+
+    @GetMapping("/view/{id}")
+    public String viewClassroom(@PathVariable String id, Model model){
+        Classroom classroom = classroomServices.getClassroomById(id);
+        model.addAttribute("classroom", classroom);
+        return "Classroom/view";
+    }
+
+    @PostMapping("/saveedit")
+    public String saveClassroomEdit(Classroom classroom){
+        classroomServices.UpdateClassroom(classroom);
+        return "redirect:/classrooms";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteClassroom(@PathVariable String id){
+        classroomServices.DeleteClassroom(id);
         return "redirect:/classrooms";
     }
 }
