@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add User</title>
+</head>
+<body>
+<h1>Add User</h1>
+<form th:action="@{/users/add}" th:object="${user}" method="post">
+    <div>
+        <label>Username:</label>
+        <input type="text" th:field="*{username}" />
+        <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</div>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" />
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" th:field="*{password}" />
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
+    </div>
+    <div>
+        <label>First Name:</label>
+        <input type="text" th:field="*{firstName}" />
+        <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</div>
+    </div>
+    <div>
+        <label>Last Name:</label>
+        <input type="text" th:field="*{lastName}" />
+        <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</div>
+    </div>
+    <div>
+        <label>Role:</label>
+        <select th:field="*{role}">
+            <option th:each="role : ${roles}" th:value="${role}" th:text="${role.name}"></option>
+        </select>
+        <div th:if="${#fields.hasErrors('role')}" th:errors="*{role}">Role Error</div>
+    </div>
+<!--    <div>-->
+<!--        <label>Deleted:</label>-->
+<!--        <input type="checkbox" th:field="*{isDeleted}" />-->
+<!--    </div>-->
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<a th:href="@{/users}">Back to User List</a>
+</body>
+</html>

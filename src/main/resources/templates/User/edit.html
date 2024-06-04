@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Edit User</title>
+</head>
+<body>
+<h1>Edit User</h1>
+<form th:action="@{/users/edit/{id}(id=${user.id})}" th:object="${user}" method="post">
+  <input type="hidden" th:field="*{id}" />
+  <div>
+    <label>Username:</label>
+    <input type="text" th:field="*{username}" readonly="readonly"/>
+  </div>
+  <div>
+    <label>Email:</label>
+    <input type="email" th:field="*{email}" />
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" th:field="*{password}" />
+  </div>
+  <div>
+    <label>First Name:</label>
+    <input type="text" th:field="*{firstName}" />
+  </div>
+  <div>
+    <label>Last Name:</label>
+    <input type="text" th:field="*{lastName}" />
+  </div>
+  <div>
+    <label>Role:</label>
+    <select th:field="*{role}">
+      <option th:each="role : ${roles}" th:value="${role}" th:text="${role.name}"></option>
+    </select>
+  </div>
+<!--  <div>-->
+<!--    <label>Deleted:</label>-->
+<!--    <input type="checkbox" th:field="*{isDeleted}" />-->
+<!--  </div>-->
+  <div>
+    <button type="submit">Save</button>
+  </div>
+</form>
+<a th:href="@{/users}">Back to User List</a>
+</body>
+</html>
