@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head th:replace="Fragments/lib.html::lib('Get all')">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<table>
-    <thead>
+<header th:replace="Fragments/lib.html:: header"></header>
+<table class="table">
+    <thead class="thead-light">
     <td>
         STT
     </td>
@@ -14,7 +15,7 @@
         ID
     </td>
     <td>
-Name
+        Name
     </td>
     <td>
         Email
@@ -25,6 +26,12 @@ Name
     <td>
         Birth
     </td>
+    <td>
+        Classroom
+    </td>
+    <td>
+        Action
+    </td>
     </thead>
     <tr th:each="student : ${students}">
         <td th:text="${studentStat.index+1}"></td>
@@ -33,7 +40,14 @@ Name
         <td th:text="${student.email}"></td>
         <td th:text="${student.password}"></td>
         <td th:text="${student.dateOfBirth}"></td>
+        <td th:text="${student.classroom.name}"></td>
+        <td>
+            <a th:href="'/students/view/'+${student.id}">View</a>
+            <a th:href="'/students/delete/'+${student.id}">Delete</a>
+        </td>
     </tr>
 </table>
+<button onclick="location.href='/students/new'">Create</button>
+<footer th:replace="Fragments/lib.html :: footer"></footer>
 </body>
 </html>

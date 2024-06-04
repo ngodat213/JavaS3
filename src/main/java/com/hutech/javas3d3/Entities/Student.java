@@ -2,6 +2,7 @@ package com.hutech.javas3d3.Entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 @Getter
@@ -21,9 +22,14 @@ public class Student {
     @Column(nullable = false, unique = true)
     private String email;
     private String password;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
     @Transient
     private int Age;
+
+    @ManyToOne()
+    @JoinColumn(name = "classID")
+    private Classroom classroom;
 
 
     public Student(String id, String firstName, String lastName, String email, String password, Date dateOfBirth) {
