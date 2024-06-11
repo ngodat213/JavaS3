@@ -14,7 +14,7 @@
     <name>TestC5</name>
     <description>TestC5</description>
     <properties>
-        <java.version>22</java.version>
+        <java.version>21</java.version>
     </properties>
     <dependencies>
         <dependency>

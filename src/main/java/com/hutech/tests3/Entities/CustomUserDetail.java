@@ -39,6 +39,6 @@ public class CustomUserDetail implements UserDetails{
     }
 
     public String getDisplayName(){
-        return "HEHEHEHEHEHEHE";
+        return user.getFirstName() + " " + user.getLastName();
     }
 }
