@@ -7,7 +7,10 @@ import java.security.GeneralSecurityException;
 import java.util.Base64;
 
 public class EncryptionUtil {
-
+//  DES
+//  private static final String ALGORITHM = "DES";
+//  private static final byte[] SECRET_KEY = "12345678".getBytes(); // 8 bytes key
+//  3DES
     private static final String ALGORITHM = "DESede";
     private static final byte[] SECRET_KEY = "123456789123456789123456".getBytes(); // 24 bytes key
 
