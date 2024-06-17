@@ -1,58 +1,54 @@
 package com.hutech.javas3d3.Controllers;
 
 import com.hutech.javas3d3.Entities.User;
+import com.hutech.javas3d3.RequestEntities.StudentCreate;
 import com.hutech.javas3d3.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.security.GeneralSecurityException;
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@RequestMapping("/users")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     @GetMapping("/register")
-    public String showRegisterPage() {
+    public String registerForm(Model model) {
+        model.addAttribute("user", new StudentCreate());
         return "User/register";
     }
 
     @PostMapping("/register")
-    public String register(@RequestParam String username, @RequestParam String password, Model model) {
-        try {
-            User registeredUser = userService.registerUser(username, password);
-            model.addAttribute("message", "Registration successful");
-            return "User/login"; // Redirect to login page after successful registration
-        } catch (GeneralSecurityException e) {
-            model.addAttribute("message", "Registration failed: " + e.getMessage());
-            return "User/register";
-        }
+    public String registerSubmit(@ModelAttribute StudentCreate req) {
+        User user = new User();
+        user.setUsername(req.getUsername());
+        user.setPassword(req.getPassword());
+        userService.save(user);
+        return "redirect:/login";
     }
 
     @GetMapping("/login")
-    public String showLoginPage() {
+    public String loginForm(Model model) {
+        model.addAttribute("user", new User());
         return "User/login";
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, Model model) {
-        try {
-            User user = userService.loginUser(username, password);
-            if (user != null) {
-                model.addAttribute("message", "Login successful");
-                return "index"; // Redirect to a welcome page or dashboard after successful login
-            } else {
-                model.addAttribute("message", "Invalid username or password");
-                return "User/login";
-            }
-        } catch (GeneralSecurityException e) {
-            model.addAttribute("message", "Login failed: " + e.getMessage());
-            return "User/login";
+    public String loginSubmit(@ModelAttribute User user) {
+        User existingUser = userService.findByUsername(user.getUsername());
+        if (existingUser != null && existingUser.getPassword().equals(user.getPassword())) {
+            return "redirect:/home";
+        } else {
+            return "redirect:/login?error";
         }
+    }
+
+    @GetMapping("/home")
+    public String home() {
+        return "index";
     }
 }

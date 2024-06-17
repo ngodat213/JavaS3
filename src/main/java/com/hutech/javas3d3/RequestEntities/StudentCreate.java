@@ -13,9 +13,6 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StudentCreate {
-    private String firstName;
-    private String lastName;
-    private String email;
+    private String username;
     private String password;
-    private String dateOfBirth;
 }

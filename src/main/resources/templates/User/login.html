@@ -1,26 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
 </head>
 <body>
-<h1>Login</h1>
-<form action="#" th:action="@{/users/login}" method="post">
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"/>
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"/>
-    </div>
-    <div>
-        <button type="submit">Login</button>
-    </div>
-    <div th:if="${message}">
-        <p th:text="${message}"></p>
-    </div>
+<h2>Login</h2>
+<form action="/login" method="post" th:object="${user}">
+    <label>Username:</label>
+    <input type="text" th:field="*{username}" required><br>
+    <label>Password:</label>
+    <input type="password" th:field="*{password}" required><br>
+    <button type="submit">Login</button>
+    <p th:if="${param.error}">Invalid username or password</p>
 </form>
 </body>
 </html>
