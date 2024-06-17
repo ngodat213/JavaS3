@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="toggle-container" th:fragment="login-slider">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <!-- Nội dung slide 1 -->
+                <img alt="Slide 1" th:src="@{/images/login/login1.avif}"/>
+                <div class="toggle">
+                    <div class="toggle-panel toggle-sign-in">
+                        <div class="overlay"></div>
+                        <!-- Added overlay div -->
+                        <div class="text-container">
+                            <h3>Explore Culinary Delights</h3>
+                            <p>
+                                Embark on a gastronomic adventure, discovering the flavors
+                                and aromas of diverse cuisines around the globe.
+                            </p>
+                            <ul class="text-container-location">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                VietNam, Ho Chi Minh City
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <!-- Nội dung slide 2 -->
+                <img alt="Slide 2" th:src="@{/images/login/login2.avif}"/>
+                <div class="toggle">
+                    <div class="toggle-panel toggle-sign-in">
+                        <div class="overlay"></div>
+                        <!-- Added overlay div -->
+                        <div class="text-container">
+                            <h3>Indulge in Local Cuisine</h3>
+                            <p>
+                                Immerse yourself in the culture of each destination
+                                through its authentic dishes, from street food gems to
+                                fine dining experiences.
+                            </p>
+                            <ul class="text-container-location">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                VietNam, Ho Chi Minh City
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

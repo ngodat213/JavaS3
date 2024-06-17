@@ -1,0 +1,539 @@
+/******************************************************************
+  Template Name: Freal
+  Description:  Freal social HTML Template
+  Version: 1.0
+******************************************************************/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1.  Template default CSS
+  1.1 google font
+  1.2 Variables
+2. Login and register page
+3.  Header Section
+4.  Hero Section
+5.  
+6. Footer Style
+-------------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/* 1. Template default CSS
+/*----------------------------------------*/
+
+/*----------------------------------------*/
+/* 1.1. google fonts
+/*----------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+/*----------------------------------------*/
+/* 1.2. = variables
+/*----------------------------------------*/
+:root {
+  --orange: hsl(36, 80%, 50%);
+  --white: hsl(0, 0%, 100%);
+  --WHITE: hsl(0, 0%, 100%);
+  --BLACK: hsl(0, 0%, 0%);
+  --black-90: hsl(0, 0%, 10%);
+  --black-70: hsl(0, 0%, 30%);
+  --back-alpla-40: hsla(0, 0%, 0%, 0.4);
+  --yellow-light: hsl(44, 95%, 83%);
+  --green-light: hsl(158, 68%, 75%);
+  --red-light: hsl(0, 84%, 80%);
+  --orange-light: hsl(22, 85%, 80%);
+  --select-box-bg-color: hsl(0, 0%, 100%);
+  --boder-color-1: hsl(0, 0%, 90%);
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+}
+
+/* @mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* @mixin box-shadow($x, $y, $blur, $spread, $color) {
+  box-shadow: $x $y $blur $spread $color;
+} */
+
+/*----------------------------------------*/
+/* 1.4. Flexbox
+/*----------------------------------------*/
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+/* .flex-center {
+  @include flex-center;
+} */
+
+.flex-between {
+  justify-content: space-between;
+}
+
+/*----------------------------------------*/
+/* 1.5. Reset
+/*----------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+/*----------------------------------------*/
+/* 2. login and register page
+/*----------------------------------------*/
+/* login and register page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #212529;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 5rem 0;
+}
+
+/* Media Queries */
+
+/* Tablets */
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    min-height: 600px;
+  }
+
+  .toggle-container {
+    display: block;
+    width: 50%;
+  }
+
+  .form-container {
+    width: 50%;
+  }
+
+  .text-container {
+    text-align: left;
+  }
+}
+/* Mobile */
+@media (max-width: 599px) {
+  .container {
+    padding: 10px;
+  }
+
+  .form-container {
+    padding: 10px;
+  }
+
+  .text-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .text-container p {
+    font-size: 1rem;
+  }
+
+  .social-icons a {
+    margin: 0 5px;
+  }
+
+  .container-footer {
+    padding: 10px;
+  }
+}
+
+.container-footer a {
+  color: #5d6162;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.container {
+  display: flex;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  width: 1100px;
+  max-width: 100%;
+  min-height: 600px;
+  margin-bottom: 30px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.container span {
+  font-size: 12px;
+}
+
+.form-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 6px 0 16px;
+}
+
+.left-item {
+  text-align: left;
+}
+
+.right-item {
+  text-align: right;
+}
+
+.separator {
+  flex-grow: 1;
+  height: 1px;
+  border: none;
+  background-color: #333;
+  margin: 0 10px;
+}
+
+.container a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 20px 0 20px;
+  position: relative; /* Đảm bảo container của form có position để z-index hoạt động */
+  z-index: 1; /* Giá trị nhỏ hơn custom-alert */
+}
+
+.container button {
+  background-color: #2da0a8;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.5s, opacity 0.5s;
+  box-shadow: 0.5em 0.5em 0.5em #0000004d;
+}
+
+.container button.hidden {
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.container button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Điều chỉnh bán kính để phù hợp với button */
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.container button:active {
+  transform: translate(0.25em, 0.25em);
+  box-shadow: 0.25em 0.25em 0.25em #0000004d;
+}
+
+.container button:active::before {
+  opacity: 1;
+}
+.container form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 74px;
+  width: 100%;
+  height: 100%;
+}
+
+.container input {
+  background-color: #eee;
+  border: none;
+  margin: 12px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.container input.password-input {
+  border: 1px solid #fff; /* Chỉ áp dụng border cho input của password */
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 20px;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.left-link {
+  text-align: left;
+}
+
+.right-link {
+  text-align: right;
+}
+
+.social-icons {
+  margin: 20px 0 10px;
+}
+
+.social-icons a {
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3px;
+  width: 40px;
+  height: 40px;
+}
+
+.toggle-container {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1; /* Ensures the overlay is above the image but below the text */
+}
+
+.text-container {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: left;
+  z-index: 2; /* Ensures the text is above the overlay */
+}
+
+.text-container h3,
+.text-container p {
+  margin: 10px -100px;
+  margin-right: 50px;
+}
+
+.container ul {
+  color: #fff;
+  font-size: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  margin: 25px 0 0 -130px;
+}
+
+.show-item {
+  position: relative;
+  width: 100%;
+}
+
+.show-item input {
+  width: 100%;
+  padding-right: 30px; /* Add some padding to make space for the icon */
+}
+
+.row.fill-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row.fill-name .col-6 {
+  padding-right: 6px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.container ul.text-container-location {
+  background-color: transparent;
+  margin-left: -100px;
+}
+/*----------------------------------------*/
+/* 1.. Nofitication with Register form
+/*----------------------------------------*/
+#custom-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999; /* Đảm bảo nó được hiển thị ở trên cùng */
+}
+
+#custom-alert .alert-content {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+}
+#message {
+  position: absolute;
+  top: 33px;
+  color: #5d6162;
+  font-size: 13px;
+  display: none;
+}
+
+::placeholder {
+  font-size: 13px;
+}
+
+#password-match {
+  position: absolute;
+  top: 33px;
+  color: #5d6162;
+  font-size: 13px;
+  display: none;
+}
+
+/* form OTP begin */
+.form-group {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.form-opt-item {
+  margin: 0 10px;
+}
+
+.form-opt-item input {
+  width: 50px;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.form-opt h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-opt span {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.form-opt button {
+  background-color: #2da0a8;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.form-opt p {
+  margin-top: 20px;
+  text-align: center;
+  color: #555;
+}
+
+.form-opt p a {
+  color: #75b8ed;
+  text-decoration: none;
+}
+
+.form-opt p a:hover {
+  text-decoration: underline;
+}
+
+/* form OTP end */

@@ -19,6 +19,8 @@ public class Observable {
     @ManyToOne
     private User user;
 
+    private String status;
+
     private LocalDateTime timeIn;
     private LocalDateTime timeOut;
 }

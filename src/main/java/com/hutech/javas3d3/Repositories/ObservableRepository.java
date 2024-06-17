@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface ObservableRepository extends JpaRepository<Observable, Long> {
+    Observable findTopByUserOrderByIdDesc(User user);
 }

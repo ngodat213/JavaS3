@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<nav class="navbar">
+    <div class="navbar-left">
+        <ul>
+            <li>
+                <a href="HomeFreal.html"><i href="HomeFreal.html" class="fa-solid fa-house"></i> Home</a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-center">
+        <ul>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Community feed</a></li>
+            <li>
+                <a href="#">Mutual friend <span></span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-right">
+        <ul>
+            <li>
+                <a class="navbar-right__item" href="#"><i class="fa-solid fa-comment-dots"></i></a>
+            </li>
+            <li>
+                <a class="navbar-right__item" href="#"><i class="fa-solid fa-bell"></i></a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="profile-link" sec:authorize="isAuthenticated()">
+                    <span th:text="Hehehe"></span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkVZoGW3vdRhfccLRhRbX_7DjzBqF0w6SB5g&s" alt="Profile" />
+                    <i class="fa-solid fa-circle-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Add account</a></li>
+                    <li><a href="#">Setting account</a></li>
+                    <li><a th:href="@{/logout}">LogOut</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+</html>

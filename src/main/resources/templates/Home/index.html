@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:replace="Fragments/main_head :: head(Freal)">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:replace="Fragments/sidebar"></div>
+    <div class="main-container">
+        <div th:replace="Fragments/navbar"></div>
+        <div class="container">
+            <main class="content">
+                <header class="content-think">
+                    <div class="content-think__post">
+                        <input type="text" placeholder="What's on your mind?" />
+                    </div>
+                    <div class="content-think__actions">
+                        <ul class="think-item__right">
+                            <li>
+                                <a href="#"><i class="fa-solid fa-camera"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-regular fa-image"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-regular fa-face-smile"></i></a>
+                            </li>
+                        </ul>
+                        <ul class="think-item__left">
+                            <li>
+                                <a class="think-item__left__pen" href="#"><i class="fa-regular fa-pen-to-square"></i> Draft</a>
+                            </li>
+                            <li>
+                                <a class="think-item__left__post" href="#">Post</a>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                <section class="post">
+                    <div class="post-header">
+                        <img src="../../static/images/avata/avata1.jpg" alt="profile" />
+                        <div class="post-info">
+                            <h3>AndyVu Coder</h3>
+                            <span>12 minutes ago on <strong>3D Stock Contributor</strong></span>
+                        </div>
+                        <div class="post-item">
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>What is the reason guys yesterday I uploaded some kind of content they approved it but when today I tried to upload they say we no longer accept this type of content</p>
+                        <img src="/images/background.avif" alt="post" />
+                    </div>
+                    <div class="post-actions">
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fa-regular fa-thumbs-up"></i>Liked post 1.7K</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-regular fa-comment"></i>Comment 45</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-regular fa-share-from-square"></i>Share 12</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="post-comment">
+                        <div class="content-think__comment">
+                            <img src="../../static/images/avata/avata1.jpg" alt="profile" />
+                            <input type="text" placeholder="What's on your mind?" />
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fa-solid fa-camera"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa-regular fa-image"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa-regular fa-face-smile"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="comment-options">
+                            <li class="dropdown-comment">
+                                <a href="#" class="select-item">
+                                    <span>All comments</span>
+                                    <i class="fa-solid fa-circle-chevron-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">All Comments</a></li>
+                                    <li><a href="#">Latest comments</a></li>
+                                </ul>
+                            </li>
+                            <span>Sort by: Most popular</span>
+                        </div>
+                        <div class="comment-list">
+                            <div class="comment">
+                                <img src="../../static/images/avata/avata1.jpg" alt="comment-profile" />
+                                <div class="comment-content">
+                                    <span>Aditya Cah Tegal</span>
+                                    <p>People getting this type of rejection for AI images, or any images that contains ai generated content, but this is definitely not AI.</p>
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="fa-solid fa-arrows-turn-right"></i>Reply comment 12</a>
+                                        </li>
+                                        <li><a href="#">Upvote</a></li>
+                                        <li><a href="#">Downvote</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="view-all-comment">
+                            <a href="#">View all comments</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <aside class="trending">
+                <h2>Today Trending</h2>
+                <ul>
+                    <li>Figma maintenance</li>
+                    <li>Blender Update</li>
+                    <li>Slackoverflow server</li>
+                    <li>Javascript new</li>
+                </ul>
+                <div class="suggested-community">
+                    <h2>Suggested community</h2>
+                    <button>Join community</button>
+                </div>
+                <div class="friends-list">
+                    <h2>My friends</h2>
+                    <ul>
+                        <li>Ridwan Beler</li>
+                        <li>Maria Galau</li>
+                        <li>Chrish Bule</li>
+                        <li>Gerrald Kocak</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/99cbdec5b3.js" crossorigin="anonymous"></script>
+</body>
+</html>
